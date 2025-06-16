@@ -1,29 +1,21 @@
+/**
+* Template Name: ZenBlog
+* Template URL: https://bootstrapmade.com/zenblog-bootstrap-blog-template/
+* Updated: Aug 08 2024 with Bootstrap v5.3.3
+* Author: BootstrapMade.com
+* License: https://bootstrapmade.com/license/
+*/
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/*--------------------------------------------------------------
+# Font & Color Variables
+# Help: https://bootstrapmade.com/color-system/
+--------------------------------------------------------------*/
+/* Fonts */
 :root {
   --default-font: "EB Garamond",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --heading-font: "EB Garamond",  sans-serif;
   --nav-font: "Inter",  sans-serif;
 }
-h3 {
-  @apply text-[calc(1.3rem_+_.6vw)] font-medium leading-tight mb-2;
-}
-h2 {
-  @apply text-[calc(1.325rem+_.9vw)] font-medium leading-tight mb-2;
-}
-.container{
-  /*         max-width: 1140px; at mediaquert */
-  @apply min-[1200px]:max-w-[1140px];
-
-}
-hr{ 
-   margin: 1rem 0;
- 
-
-  }
-
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
@@ -1822,7 +1814,7 @@ section,
   margin-top: 40px;
 }
 
-.contact .info-item i,.contact .info-item .i {
+.contact .info-item i {
   color: var(--contrast-color);
   background: var(--accent-color);
   font-size: 20px;
@@ -1877,7 +1869,7 @@ section,
   color: color-mix(in srgb, var(--default-color), transparent 70%);
 }
 
-.contact .php-email-form button[type=submit],.form-submit {
+.contact .php-email-form button[type=submit] {
   color: var(--contrast-color);
   background: var(--accent-color);
   border: 0;
