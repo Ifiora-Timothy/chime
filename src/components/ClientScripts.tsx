@@ -5,8 +5,8 @@
 // export default function ClientScripts() {
 //   useEffect(() => {
 //    /**
-// * Template Name: ZenBlog
-// * Template URL: https://bootstrapmade.com/zenblog-bootstrap-blog-template/
+// * Template Name: ChimesBlog
+// * Template URL: https://bootstrapmade.com/ChimesBlog-bootstrap-blog-template/
 // * Updated: Aug 08 2024 with Bootstrap v5.3.3
 // * Author: BootstrapMade.com
 // * License: https://bootstrapmade.com/license/

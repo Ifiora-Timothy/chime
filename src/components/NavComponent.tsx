@@ -1,37 +1,80 @@
 "use client";
-import { AlignJustify, ChevronDown } from "lucide-react";
+import { AlignJustify, ChevronDown, X } from "lucide-react";
 import Link from "next/link";
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const NavComponent = () => {
-  const mobileNavTogleRef = useRef<SVGSVGElement>(null);
+  const mobileNavTogleRef = useRef<HTMLDivElement>(null);
+  const [mobileNavTogle, setMobileNavTogle] =   useState(false);
+
+  function mobileNavToogle() {
+    const body = document.querySelector("body");
+    if (!mobileNavTogleRef.current || !body) return;
+
+    body.classList.toggle("mobile-nav-active");
+    setMobileNavTogle((prev) => !prev);
+  }
+
+  useEffect(() => {
+    const toggleEl = mobileNavTogleRef.current;
+    toggleEl?.addEventListener("click", mobileNavToogle);
+  
+
+    const navLinks = document.querySelectorAll("#navmenu a");
+    const linkHandler = () => {
+      if (document.querySelector(".mobile-nav-active")) {
+        mobileNavToogle();
+      }
+    };
+    navLinks.forEach((link) => link.addEventListener("click", linkHandler));
+
+    const dropdownToggles = document.querySelectorAll(
+      ".navmenu .toggle-dropdown"
+    );
+    const dropdownHandler = function (e: Event) {
+      e.preventDefault();
+      const parent = (e.currentTarget as HTMLElement).parentElement;
+      const next = parent?.nextElementSibling;
+
+      parent?.classList.toggle("active");
+      next?.classList.toggle("dropdown-active");
+      e.stopImmediatePropagation();
+    };
+
+    dropdownToggles.forEach((el) =>
+      el.addEventListener("click", dropdownHandler)
+    );
+
+    // ✅ Clean up
+    return () => {
+      toggleEl?.removeEventListener("click", mobileNavToogle);
+      navLinks.forEach((link) =>
+        link.removeEventListener("click", linkHandler)
+      );
+      dropdownToggles.forEach((el) =>
+        el.removeEventListener("click", dropdownHandler)
+      );
+    };
+  }, []);
 
   return (
     <nav id="navmenu" className="flex justify-center  navmenu">
       <ul>
-        <li className="">
+        <li>
           <Link href="/" className="active">
             Home
           </Link>
         </li>
         <li>
-          <Link href="/about" className="">
-            About
-          </Link>
+          <Link href="/about">About</Link>
         </li>
         <li>
-          <Link href="/single-post" className="">
-            Single Post
-          </Link>
+          <Link href="/single-post">Single Post</Link>
         </li>
         <li className="dropdown">
           <Link href="#">
             <span>Categories</span>{" "}
-            <ChevronDown
-              className="toggle-dropdown"
-              strokeWidth={1}
-              size={22}
-            />
+            <ChevronDown className="toggle-dropdown" strokeWidth={1} size={22} />
           </Link>
           <ul>
             <li>
@@ -79,10 +122,16 @@ const NavComponent = () => {
           <Link href="/contact">Contact</Link>
         </li>
       </ul>
-      <AlignJustify
-        ref={mobileNavTogleRef}
-        className="mobile-nav-toggle lg:hidden"
-      />
+
+      {/* Mobile Toggle */}
+      <div ref={mobileNavTogleRef} className="mobile-nav-toggle lg:hidden">
+        {mobileNavTogle ? (
+          <X/>
+        ) : (
+          <AlignJustify />
+        )}
+        
+      </div>
     </nav>
   );
 };

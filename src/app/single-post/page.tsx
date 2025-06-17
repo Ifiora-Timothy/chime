@@ -1,5 +1,5 @@
 import { SiFacebook, SiInstagram, SiX } from "@icons-pack/react-simple-icons";
-import {  FolderClosed, Linkedin, Tags, User } from "lucide-react";
+import {  Clock, FolderClosed, Linkedin, MessageCircleMore, Tags, User } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -7,7 +7,7 @@ import React from "react";
 
 const SinglePost = () => {
   return (
-    <main className="main">
+    <main className="main max-w-screen overflow-hidden">
       <div className="page-title">
         <div className="container mx-auto px-4  max-w-screen-xl lg:flex lg:justify-between lg:items-center">
           <h1 className="mb-2 lg:mb-0">Single Post</h1>
@@ -25,7 +25,7 @@ const SinglePost = () => {
       </div>
 
       <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-12 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           <div className="lg:col-span-8">
             <section id="blog-details" className="blog-details section py-16">
               <div className="container  mx-auto px-2">
@@ -36,7 +36,7 @@ const SinglePost = () => {
                       height={768}
                       width={1024}
                       alt=""
-                      className="img-fluid "
+                      className="img-fluid"
                     />
                   </div>
 
@@ -46,33 +46,33 @@ const SinglePost = () => {
                   </h2>
 
                   <div className="meta-top mb-8">
-                    <ul className="flex flex-wrap gap-6 text-sm text-gray-600">
+                    <ul className="flex flex-wrap gap-x-1 gap-y-3 md:gap-6 ">
                       <li className="flex items-center">
-                        <User className="mr-2" size={18} />
+                        <User  strokeWidth={1}  className="mr-2" size={18} />
                         <a
-                          href="blog-details.html"
+                          href="blog-details"
                           className="hover:text-blue-600"
                         >
                           John Doe
                         </a>
                       </li>
                       <li className="flex items-center">
-                        <i className="bi bi-clock mr-2"></i>
+                        <Clock className="mr-2" strokeWidth={1} size={18} />
                         <a
-                          href="blog-details.html"
+                          href="blog-details"
                           className="hover:text-blue-600"
                         >
                           <time dateTime="2020-01-01">Jan 1, 2022</time>
                         </a>
                       </li>
-                      <li className="flex items-center">
-                        <i className="bi bi-chat-dots mr-2"></i>
-                        <a
-                          href="blog-details.html"
+                      <li className="flex items-center justify-start c mr-auto">
+                        <MessageCircleMore strokeWidth={1} className="mr-2 " size={18} />
+                        <Link
+                          href="blog-details"
                           className="hover:text-blue-600"
                         >
                           12 Comments
-                        </a>
+                        </Link>
                       </li>
                     </ul>
                   </div>
@@ -200,14 +200,14 @@ const SinglePost = () => {
             </section>
 
             <section id="blog-comments" className="blog-comments section py-16">
-              <div className="container mx-auto px-4">
+              <div className="container">
                 <h4 className="comments-count text-2xl font-semibold mb-8">
                   8 Comments
                 </h4>
 
                 <div
                   id="comment-1"
-                  className="comment mb-8 bg-white p-6 rounded-lg shadow-sm"
+                  className="comment "
                 >
                   <div className="flex gap-4">
                     <div className="comment-Image flex-shrink-0">
@@ -254,7 +254,7 @@ const SinglePost = () => {
 
                 <div
                   id="comment-2"
-                  className="comment mb-8 bg-white p-6 rounded-lg shadow-sm"
+                  className="comment"
                 >
                   <div className="flex gap-4">
                     <div className="comment-Image flex-shrink-0">
@@ -298,7 +298,7 @@ const SinglePost = () => {
 
                   <div
                     id="comment-reply-1"
-                    className="comment comment-reply ml-12 mt-6 bg-gray-50 p-6 rounded-lg"
+                    className="comment comment-reply"
                   >
                     <div className="flex gap-4">
                       <div className="comment-Image flex-shrink-0">
@@ -353,7 +353,7 @@ const SinglePost = () => {
 
                     <div
                       id="comment-reply-2"
-                      className="comment comment-reply ml-12 mt-6 bg-white p-6 rounded-lg shadow-sm"
+                      className="comment comment-reply"
                     >
                       <div className="flex gap-4">
                         <div className="comment-Image flex-shrink-0">
@@ -403,7 +403,7 @@ const SinglePost = () => {
 
                 <div
                   id="comment-3"
-                  className="comment mb-8 bg-white p-6 rounded-lg shadow-sm"
+                  className="comment"
                 >
                   <div className="flex gap-4">
                     <div className="comment-Image flex-shrink-0">
@@ -454,7 +454,7 @@ const SinglePost = () => {
 
                 <div
                   id="comment-4"
-                  className="comment mb-8 bg-white p-6 rounded-lg shadow-sm"
+                  className="comment"
                 >
                   <div className="flex gap-4">
                     <div className="comment-Image flex-shrink-0">
@@ -502,10 +502,10 @@ const SinglePost = () => {
 
             <section
               id="comment-form"
-              className="comment-form section py-16 bg-gray-50"
+              className="comment-form section "
             >
               <div className="container mx-auto px-4">
-                <form action="" className="bg-white p-8 rounded-lg shadow-sm">
+                <form action="" className="">
                   <h4 className="text-2xl font-semibold mb-4">Post Comment</h4>
                   <p className="text-gray-600 mb-8">
                     Your email address will not be published. Required fields
@@ -564,7 +564,7 @@ const SinglePost = () => {
 
           <div className="lg:col-span-4 sidebar">
             <div className="widgets-container space-y-8">
-              <div className="blog-author-widget widget-item bg-white p-6 rounded-lg shadow-sm">
+              <div className="blog-author-widget widget-item">
                 <div className="flex flex-col items-center">
                   <div className="flex items-center w-full ">
                     <Image
@@ -649,7 +649,7 @@ const SinglePost = () => {
                   <div>
                     <h4 className="mb-2">
                       <a
-                        href="blog-details.html"
+                        href="blog-details"
                         className="text-gray-900 hover:text-blue-600 font-medium leading-tight"
                       >
                         Nihil blanditiis at in nihil autem
@@ -675,7 +675,7 @@ const SinglePost = () => {
                   <div>
                     <h4 className="mb-2">
                       <a
-                        href="blog-details.html"
+                        href="blog-details"
                         className="text-gray-900 hover:text-blue-600 font-medium leading-tight"
                       >
                         Quidem autem et impedit
@@ -701,7 +701,7 @@ const SinglePost = () => {
                   <div>
                     <h4 className="mb-2">
                       <a
-                        href="blog-details.html"
+                        href="blog-details"
                         className="text-gray-900 hover:text-blue-600 font-medium leading-tight"
                       >
                         Id quia et et ut maxime similique occaecati ut
@@ -727,7 +727,7 @@ const SinglePost = () => {
                   <div>
                     <h4 className="mb-2">
                       <a
-                        href="blog-details.html"
+                        href="blog-details"
                         className="text-gray-900 hover:text-blue-600 font-medium leading-tight"
                       >
                         Laborum corporis quo dara net para
@@ -753,7 +753,7 @@ const SinglePost = () => {
                   <div>
                     <h4 className="mb-2">
                       <a
-                        href="blog-details.html"
+                        href="blog-details"
                         className="text-gray-900 hover:text-blue-600 font-medium leading-tight"
                       >
                         Et dolores corrupti quae illo quod dolor
@@ -825,6 +825,8 @@ const SinglePost = () => {
                   <Image
                     src="/img/blog/blog-author.jpg"
                     alt=""
+                    height={600}
+                    width={600}
                     className="w-16 h-16 object-cover rounded-full mr-4"
                   />
                   <div>

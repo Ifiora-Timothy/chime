@@ -3,7 +3,7 @@ import { EB_Garamond, Geist, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
 import { SiFacebook, SiInstagram, SiX } from "@icons-pack/react-simple-icons";
-import {  Linkedin } from "lucide-react";
+import { Linkedin } from "lucide-react";
 import NavComponent from "@/components/NavComponent";
 
 const geistSans = Geist({
@@ -13,14 +13,15 @@ const geistSans = Geist({
 
 const inter = Inter({
   variable: "--font-inter",
-  subsets: ["latin-ext","latin"],
+  subsets: ["latin-ext", "latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
 const eb_garamond = EB_Garamond({
   variable: "--font-eb-garamond",
-  subsets: ["latin","latin-ext"],
-  weight: ["400", "500", "600", "700", "800"],});
+  subsets: ["latin", "latin-ext"],
+  weight: ["400", "500", "600", "700", "800"],
+});
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -42,24 +43,23 @@ export default function RootLayout({
       <head>
         <meta charSet="utf-8" />
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-        <title>Index - ZenBlog Bootstrap Template</title>
+        <title>Index - ChimesBlog Bootstrap Template</title>
         <meta name="description" content="" />
         <meta name="keywords" content="" />
-
       </head>
       <body
         className={`${geistSans.variable} ${inter.variable} ${eb_garamond.variable} ${geistMono.variable} min-h-screen index-page flex flex-col antialiased`}
       >
         <header
           id="header"
-          className="header h-fit w-full  flex items-center sticky  top-0"
+          className="header h-fit w-full  flex items-center  sticky  top-0"
         >
-          <div className="mx-auto px-4 sm:px-6 lg:px-12 max-w-screen-xl  w-full position-relative flex items-center justify-between">
-            <Link href="/" className="logo flex items-center">
-              <h1 className="sitename">ZenBlog</h1>
+          <div className="container relative flex items-center justify-between">
+            <Link href="/" className="logo flex items-center me-auto bs-lg:me-0 ">
+              <h1 className="sitename">ChimesBlog</h1>
             </Link>
 
-          <NavComponent/>
+            <NavComponent />
             <div className="header-social-links gap-1 flex pr-4">
               <Link href="#" className="pl-2 text-base">
                 <SiX size={16} />
@@ -76,17 +76,15 @@ export default function RootLayout({
             </div>
           </div>
         </header>
-     
-         <main className="flex-1">
-    {children}
-  </main>
-  
+
+        <main className="flex-1">{children}</main>
+
         <footer id="footer" className="footer h-fit  dark-background">
-          <div className="mx-auto px-4 sm:px-6 lg:px-12 max-w-screen-xl footer-top">
+          <div className="container footer-top">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4">
               <div className="lg:col-span-4 md:col-span-1 footer-about">
                 <Link href="/" className="logo flex items-center">
-                  <span className="sitename">ZenBlog</span>
+                  <span className="sitename">ChimesBlog</span>
                 </Link>
                 <div className="footer-contact pt-3">
                   <p>A108 Adam Street</p>
@@ -200,14 +198,13 @@ export default function RootLayout({
             </div>
           </div>
 
-          <div className="mx-auto px-4 sm:px-6 lg:px-12 max-w-screen-xl copyright text-center mt-4">
+          <div className="container copyright text-center mt-4">
             <p>
               © <span>Copyright</span>{" "}
-              <strong className="px-1 sitename">ZenBlog</strong>{" "}
+              <strong className="px-1 sitename">ChimesBlog</strong>{" "}
               <span>All Rights Reserved</span>
             </p>
           </div>
-       
         </footer>
       </body>
     </html>

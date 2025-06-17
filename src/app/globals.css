@@ -6,6 +6,8 @@
   --default-font: "EB Garamond",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --heading-font: "EB Garamond",  sans-serif;
   --nav-font: "Inter",  sans-serif;
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
 }
 h3 {
   @apply text-[calc(1.3rem_+_.6vw)] font-medium leading-tight mb-2;
@@ -15,14 +17,35 @@ h2 {
 }
 .container{
   /*         max-width: 1140px; at mediaquert */
-  @apply min-[1200px]:max-w-[1140px];
-
+  @apply  min-[1440px]:max-w-[1320px]  min-[1200px]:max-w-[1140px]  min-[992px]:max-w-[960px]  min-[768px]:max-w-[720px]  min-[576px]:max-w-[540px]  mx-auto px-4 w-full ;
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    padding-right: calc(var(--bs-gutter-x) * .5);
+    padding-left: calc(var(--bs-gutter-x) * .5);
 }
-hr{ 
+hr {
    margin: 1rem 0;
  
 
   }
+  .row{
+    
+        --bs-gutter-y: 3rem;
+    --bs-gutter-x: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1 * var(--bs-gutter-y));
+    margin-right: calc(-.5 * var(--bs-gutter-x));
+    margin-left: calc(-.5 * var(--bs-gutter-x));
+  }
+  .row>* {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-right: calc(var(--bs-gutter-x) * .5);
+    padding-left: calc(var(--bs-gutter-x) * .5);
+    margin-top: var(--bs-gutter-y);
+}
 
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
@@ -58,6 +81,10 @@ hr{
   --heading-color: #ffffff;
   --surface-color: #252525;
   --contrast-color: #ffffff;
+}
+.img-fluid {
+    max-width: 100%;
+    height: auto;
 }
 
 /* Smooth scroll */

@@ -110,9 +110,9 @@ const AboutPage = () => {
           className="container section-title mx-auto px-4 mb-12"
           data-aos="fade-up"
         >
-          <div className="section-title-container flex items-center justify-between">
+          <div className="section-title-container flex  md:flex-row flex-col items-start md:items-center gap-3 justify-between">
             <h2 className="text-3xl font-bold">Team</h2>
-            <p className="text-gray-600 max-w-md">
+            <p className="">
               Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
               consectetur velit
             </p>
@@ -127,13 +127,13 @@ const AboutPage = () => {
                 data-aos="fade-up"
                 data-aos-delay={`${index * 100}`}
               >
-                <div className="team-member flex items-start bg-white p-6 rounded-lg shadow-sm">
-                  <div className="pic mr-6 flex-shrink-0">
+                <div className="team-member flex items-start  p-6 rounded-lg shadow-sm">
+                  <div className="pic ">
                     <Image
                       src={member.image}
                       height={600}
                       width={600}
-                      className="w-20 h-20 rounded-full object-cover"
+                      className="img-fluid"
                       alt=""
                     />
                   </div>

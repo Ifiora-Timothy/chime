@@ -26,11 +26,11 @@ export default function Category() {
       </div>
 
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-12 gap-6">
-          <div className="col-span-8">
+        <div className="grid grid-cols-1 bs-lg:grid-cols-12 gap-6">
+          <div className=" bs-lg:col-span-8">
             <section id="blog-posts" className="blog-posts section">
               <div className="container  mx-auto px-4">
-                <div className="grid grid-cols-12 gap-6">
+                <div className="grid  grid-cols-1  bs-lg:grid-cols-12 gap-6">
                   {categoryArticles.map((catItem, index) => (
                     <div className="col-span-6 " key={index}>
                       <article className="relative flex flex-col h-full">
@@ -101,7 +101,7 @@ export default function Category() {
           </section>
 
           </div>
-          <div className="col-span-4 sidebar">
+          <div className=" bs-lg:col-span-4 sidebar">
             <div className="widgets-container">
               <div className="blog-author-widget-2 widget-item">
                 <div className="flex flex-col items-center">
