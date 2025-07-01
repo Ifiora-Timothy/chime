@@ -65,7 +65,7 @@ export default function Category() {
                           <div className=" mt-auto ">
                             <hr className="" />
                             <Link
-                              href="blog-details.html"
+                              href="blog-details"
                               className="readmore stretched-link gap-1 flex items-baseline"
                             >
                               <span>Read More</span>
@@ -160,7 +160,7 @@ export default function Category() {
                     />
                     <div>
                       <h4>
-                        <Link href="blog-details.html">{item.title}</Link>
+                        <Link href="blog-details">{item.title}</Link>
                       </h4>
                       <time dateTime="2020-01-01">Jan 1, 2020</time>
                     </div>

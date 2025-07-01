@@ -832,7 +832,7 @@ section,
 }
 
 .trending-category .post-entry img {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .trending-category .post-entry h2 {
@@ -1140,18 +1140,18 @@ section,
 }
 
 .business-category .post-list {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .business-category .post-list img {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .business-category .post-list h2 {
   margin-bottom: 20px;
   font-size: 20px;
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 1;
 }
 
 .business-category .post-list h2 a {
